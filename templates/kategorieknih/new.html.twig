@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nová Kategorie knih{% endblock %}
+
+{% block body %}
+    <h1>Vytvořit novou Kategorii</h1>
+
+    {{ include('kategorieknih/_form.html.twig') }}
+
+    <a href="{{ path('kategorieknih_index') }}">Zpátky na seznam</a>
+{% endblock %}

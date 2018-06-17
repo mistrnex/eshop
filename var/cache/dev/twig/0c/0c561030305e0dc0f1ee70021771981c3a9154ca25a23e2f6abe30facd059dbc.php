@@ -16,6 +16,7 @@ class __TwigTemplate_ab29c3e568cef4dadfe361c5acc73413f4fe3bafc0924a2ab2c7a4d4cd7
         $this->blocks = array(
             'title' => array($this, 'block_title'),
             'body' => array($this, 'block_body'),
+            'javascript' => array($this, 'block_javascript'),
         );
     }
 
@@ -80,53 +81,69 @@ class __TwigTemplate_ab29c3e568cef4dadfe361c5acc73413f4fe3bafc0924a2ab2c7a4d4cd7
                 <th>Created On</th>
                 <th>Updated On</th>
                 <th>actions</th>
+                <th>Labels</th>
             </tr>
         </thead>
         <tbody>
         ";
-        // line 20
+        // line 21
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new Twig_Error_Runtime('Variable "articles" does not exist.', 20, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new Twig_Error_Runtime('Variable "articles" does not exist.', 21, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["article"]) {
-            // line 21
+            // line 22
             echo "            <tr>
                 <td>";
-            // line 22
+            // line 23
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "id", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 23
+            // line 24
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "name", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 24
+            // line 25
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "text", array()), "html", null, true);
             echo "</td>
                 <td>";
-            // line 25
+            // line 26
             echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, $context["article"], "createdOn", array())) ? (twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "createdOn", array()), "Y-m-d H:i:s")) : ("")), "html", null, true);
             echo "</td>
                 <td>";
-            // line 26
+            // line 27
             echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, $context["article"], "updatedOn", array())) ? (twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "updatedOn", array()), "Y-m-d H:i:s")) : ("")), "html", null, true);
             echo "</td>
                 <td>
                     <a href=\"";
-            // line 28
+            // line 29
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("article_show", array("id" => twig_get_attribute($this->env, $this->source, $context["article"], "id", array()))), "html", null, true);
             echo "\">show</a>
                     <a href=\"";
-            // line 29
+            // line 30
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("article_edit", array("id" => twig_get_attribute($this->env, $this->source, $context["article"], "id", array()))), "html", null, true);
             echo "\">edit</a>
                 </td>
+                 <td> ";
+            // line 32
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["article"], "labels", array()));
+            foreach ($context['_seq'] as $context["_key"] => $context["label"]) {
+                // line 33
+                echo "                ";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["label"], "name", array()), "html", null, true);
+                echo " ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['label'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            echo "</td>
+                 
             </tr>
         ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 33
+            // line 37
             echo "            <tr>
                 <td colspan=\"5\">no records found</td>
             </tr>
@@ -135,14 +152,46 @@ class __TwigTemplate_ab29c3e568cef4dadfe361c5acc73413f4fe3bafc0924a2ab2c7a4d4cd7
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 37
+        // line 41
         echo "        </tbody>
     </table>
+    
+
 
     <a href=\"";
-        // line 40
+        // line 46
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("article_new");
-        echo "\">Create new</a>
+        echo "\" id=\"CreateNew\">Create new</a>
+    ";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 49
+    public function block_javascript($context, array $blocks = array())
+    {
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascript"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascript"));
+
+        // line 50
+        echo "\$('a#CreateNew').on('click', function(e) {
+e.preventDefault();
+\$.get(  \"";
+        // line 52
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("article_ajax");
+        echo "\" , function( data ) {
+ 
+  alert( data.message );
+});
+});
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -164,7 +213,7 @@ class __TwigTemplate_ab29c3e568cef4dadfe361c5acc73413f4fe3bafc0924a2ab2c7a4d4cd7
 
     public function getDebugInfo()
     {
-        return array (  144 => 40,  139 => 37,  130 => 33,  121 => 29,  117 => 28,  112 => 26,  108 => 25,  104 => 24,  100 => 23,  96 => 22,  93 => 21,  88 => 20,  72 => 6,  63 => 5,  45 => 3,  15 => 1,);
+        return array (  188 => 52,  184 => 50,  175 => 49,  163 => 46,  156 => 41,  147 => 37,  132 => 33,  128 => 32,  123 => 30,  119 => 29,  114 => 27,  110 => 26,  106 => 25,  102 => 24,  98 => 23,  95 => 22,  90 => 21,  73 => 6,  64 => 5,  46 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -185,6 +234,7 @@ class __TwigTemplate_ab29c3e568cef4dadfe361c5acc73413f4fe3bafc0924a2ab2c7a4d4cd7
                 <th>Created On</th>
                 <th>Updated On</th>
                 <th>actions</th>
+                <th>Labels</th>
             </tr>
         </thead>
         <tbody>
@@ -199,6 +249,9 @@ class __TwigTemplate_ab29c3e568cef4dadfe361c5acc73413f4fe3bafc0924a2ab2c7a4d4cd7
                     <a href=\"{{ path('article_show', {'id': article.id}) }}\">show</a>
                     <a href=\"{{ path('article_edit', {'id': article.id}) }}\">edit</a>
                 </td>
+                 <td> {% for label in article.labels %}
+                {{ label.name }} {% endfor %}</td>
+                 
             </tr>
         {% else %}
             <tr>
@@ -207,8 +260,25 @@ class __TwigTemplate_ab29c3e568cef4dadfe361c5acc73413f4fe3bafc0924a2ab2c7a4d4cd7
         {% endfor %}
         </tbody>
     </table>
+    
 
-    <a href=\"{{ path('article_new') }}\">Create new</a>
-{% endblock %}", "article/index.html.twig", "/home/cabox/workspace/my-project/templates/article/index.html.twig");
+
+    <a href=\"{{ path('article_new') }}\" id=\"CreateNew\">Create new</a>
+    {% endblock %}
+
+  {% block javascript %}
+\$('a#CreateNew').on('click', function(e) {
+e.preventDefault();
+\$.get(  \"{{path('article_ajax')}}\" , function( data ) {
+ 
+  alert( data.message );
+});
+});
+
+{% endblock %}
+
+
+
+", "article/index.html.twig", "/home/cabox/workspace/my-project/templates/article/index.html.twig");
     }
 }

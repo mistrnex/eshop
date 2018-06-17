@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Úprava Produktu{% endblock %}
+
+{% block body %}
+    <h1>Upravit produkt</h1>
+
+    {{ include('produkt/_form.html.twig', {'button_label': 'Aktualizovat'}) }}
+
+    <a href="{{ path('produkt_index') }}">Zpátky na seznam</a>
+
+    {{ include('produkt/_delete_form.html.twig') }}
+{% endblock %}

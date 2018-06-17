@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produkt index{% endblock %}
+
+{% block body %}
+    <h1>Produkt index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Název knihy</th>
+                <th>Popis</th>
+                <th>Cena</th>
+                <th>Akční cena</th>
+                <th>Množství</th>
+                <th>Akce</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for produkt in produkts %}
+            <tr>
+                <td>{{ produkt.id }}</td>
+                <td>{{ produkt.name }}</td>
+                <td>{{ produkt.description }}</td>
+                <td>{{ produkt.cena }}</td>
+                <td>{{ produkt.akcnicena }}</td>
+                <td>{{ produkt.mnozstvi }}</td>
+                <td>
+                    <a href="{{ path('produkt_show', {'id': produkt.id}) }}">Ukázat produkt</a>
+                    <a href="{{ path('produkt_edit', {'id': produkt.id}) }}">Upravit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('produkt_new') }}">Vytvořit nový produkt</a>
+{% endblock %}

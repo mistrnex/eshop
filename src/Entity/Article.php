@@ -3,12 +3,14 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Class User
+ * Class Article
  * @ORM\Entity
- * @ORM\Table(name="user")
+ * @ORM\Table(name="article")
  */
 class Article
 {
@@ -46,6 +48,22 @@ class Article
      */
   
   private $updatedOn;
+ 
+  /**
+   * @ORM\ManyToOne(targetEntity="App\Entity\Category")
+   * @ORM\JoinColumn(nullable=false)
+   */
+  private $category;
+  
+  /**
+   * @ORM\ManyToMany(targetEntity="App\Entity\Label")
+   */
+  private $labels;
+  
+  public function __construct()
+  {
+      $this->labels = new ArrayCollection();
+  }
   /**
      * @return mixed
      */
@@ -113,5 +131,45 @@ class Article
     {
         $this->updatedOn = $updatedOn;
     }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Label[]
+     */
+    public function getLabels(): Collection
+    {
+        return $this->labels;
+    }
+
+    public function addLabel(Label $label): self
+    {
+        if (!$this->labels->contains($label)) {
+            $this->labels[] = $label;
+        }
+
+        return $this;
+    }
+
+    public function removeLabel(Label $label): self
+    {
+        if ($this->labels->contains($label)) {
+            $this->labels->removeElement($label);
+        }
+
+        return $this;
+    }
   
 }
+
+

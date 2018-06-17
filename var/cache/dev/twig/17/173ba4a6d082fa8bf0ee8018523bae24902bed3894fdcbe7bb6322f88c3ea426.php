@@ -55,12 +55,9 @@ class __TwigTemplate_1838dcef279a2ce16a9db9591caff46bf73103f67caffedb27b53125da7
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class=\"jumbotron\">
         <div class=\"container\">
-          <h1 class=\"display-3\">";
-        // line 11
-        echo twig_escape_filter($this->env, (isset($context["title"]) || array_key_exists("title", $context) ? $context["title"] : (function () { throw new Twig_Error_Runtime('Variable "title" does not exist.', 11, $this->source); })()), "html", null, true);
-        echo "</h1>
-          <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-          <p><a class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\">Learn more &raquo;</a></p>
+          <h1 class=\"display-3\">Pokusný eshop</h1>
+         
+          <p><a class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\">Přejít na Košík</a></p>
         </div>
         
          
@@ -71,62 +68,30 @@ class __TwigTemplate_1838dcef279a2ce16a9db9591caff46bf73103f67caffedb27b53125da7
         <!-- Example row of columns -->
         <div class=\"row\">
           <div class=\"col-md-4\">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class=\"btn btn-secondary\" href=\"#\" role=\"button\">View details &raquo;</a></p>
+            <h2>Kategorie produktů</h2>
+            <p>Kategorie 1 </p>
+             <p>Kategorie  2 </p>
+              <p>Kategorie  3 </p>
+            <p><a class=\"btn btn-secondary\" href=\"#\" role=\"button\">Vyhledávání v kategoriích</a></p>
           </div>
           <div class=\"col-md-4\">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class=\"btn btn-secondary\" href=\"#\" role=\"button\">View details &raquo;</a></p>
+            <h2>Seznam nabízených produktů</h2>
+             <p>Produkt 1 </p>
+             <p>Produkt  2 </p>
+              <p>Produkt  3 </p>
+            <p><a class=\"btn btn-secondary\" href=\"#\" role=\"button\">Vyhledávání v produktech</a></p>
           </div>
           <div class=\"col-md-4\">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class=\"btn btn-secondary\" href=\"#\" role=\"button\">View details &raquo;</a></p>
+            <h2>Doplňkové funkce</h2>
+            <p>Košík</p>
+            <p><a class=\"btn btn-secondary\" href=\"#\" role=\"button\">Přejít na Košík</a></p>
           </div>
         </div>
 
         <hr>
 
       </div> <!-- /container -->
-<div class=\"container\">
-         
-<form>
-  <div class=\"form-group\">
-    <label for=\"exampleInputEmail1\">Email address</label>
-    <input type=\"email\" class=\"form-control\" id=\"exampleInputEmail1\" placeholder=\"Email\">
-  </div>
-  <div class=\"form-group\">
-    <label for=\"exampleInputPassword1\">Password</label>
-    <input type=\"password\" class=\"form-control\" id=\"exampleInputPassword1\" placeholder=\"Password\">
-  </div>
-  <div class=\"form-group\">
-    <label for=\"exampleInputFile\">File input</label>
-    <input type=\"file\" class=\"form-control-file\" id=\"exampleInputFile\">
-    <p class=\"help-block\">Example block-level help text here.</p>
-  </div>
-  <div class=\"form-group\">
-    <div class=\"form-check\">
-      <input class=\"form-check-input\" type=\"checkbox\" id=\"gridCheck\">
-      <label class=\"form-check-label\" for=\"gridCheck\">
-        Check me out
-      </label>
-    </div>
-  </div>
-  <div class=\"form-group\">
-    <label for=\"testselect\">Test</label>
-    <select class=\"form-control\" id=\"testselect\">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
-  <button type=\"submit\" class=\"btn btn-success\">Submit</button>
-</form>
-        </div>
+
       
       
   
@@ -151,7 +116,7 @@ class __TwigTemplate_1838dcef279a2ce16a9db9591caff46bf73103f67caffedb27b53125da7
 
     public function getDebugInfo()
     {
-        return array (  60 => 11,  53 => 6,  44 => 5,  15 => 1,);
+        return array (  53 => 6,  44 => 5,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -166,9 +131,9 @@ class __TwigTemplate_1838dcef279a2ce16a9db9591caff46bf73103f67caffedb27b53125da7
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class=\"jumbotron\">
         <div class=\"container\">
-          <h1 class=\"display-3\">{{ title }}</h1>
-          <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-          <p><a class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\">Learn more &raquo;</a></p>
+          <h1 class=\"display-3\">Pokusný eshop</h1>
+         
+          <p><a class=\"btn btn-primary btn-lg\" href=\"#\" role=\"button\">Přejít na Košík</a></p>
         </div>
         
          
@@ -179,62 +144,30 @@ class __TwigTemplate_1838dcef279a2ce16a9db9591caff46bf73103f67caffedb27b53125da7
         <!-- Example row of columns -->
         <div class=\"row\">
           <div class=\"col-md-4\">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class=\"btn btn-secondary\" href=\"#\" role=\"button\">View details &raquo;</a></p>
+            <h2>Kategorie produktů</h2>
+            <p>Kategorie 1 </p>
+             <p>Kategorie  2 </p>
+              <p>Kategorie  3 </p>
+            <p><a class=\"btn btn-secondary\" href=\"#\" role=\"button\">Vyhledávání v kategoriích</a></p>
           </div>
           <div class=\"col-md-4\">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class=\"btn btn-secondary\" href=\"#\" role=\"button\">View details &raquo;</a></p>
+            <h2>Seznam nabízených produktů</h2>
+             <p>Produkt 1 </p>
+             <p>Produkt  2 </p>
+              <p>Produkt  3 </p>
+            <p><a class=\"btn btn-secondary\" href=\"#\" role=\"button\">Vyhledávání v produktech</a></p>
           </div>
           <div class=\"col-md-4\">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class=\"btn btn-secondary\" href=\"#\" role=\"button\">View details &raquo;</a></p>
+            <h2>Doplňkové funkce</h2>
+            <p>Košík</p>
+            <p><a class=\"btn btn-secondary\" href=\"#\" role=\"button\">Přejít na Košík</a></p>
           </div>
         </div>
 
         <hr>
 
       </div> <!-- /container -->
-<div class=\"container\">
-         
-<form>
-  <div class=\"form-group\">
-    <label for=\"exampleInputEmail1\">Email address</label>
-    <input type=\"email\" class=\"form-control\" id=\"exampleInputEmail1\" placeholder=\"Email\">
-  </div>
-  <div class=\"form-group\">
-    <label for=\"exampleInputPassword1\">Password</label>
-    <input type=\"password\" class=\"form-control\" id=\"exampleInputPassword1\" placeholder=\"Password\">
-  </div>
-  <div class=\"form-group\">
-    <label for=\"exampleInputFile\">File input</label>
-    <input type=\"file\" class=\"form-control-file\" id=\"exampleInputFile\">
-    <p class=\"help-block\">Example block-level help text here.</p>
-  </div>
-  <div class=\"form-group\">
-    <div class=\"form-check\">
-      <input class=\"form-check-input\" type=\"checkbox\" id=\"gridCheck\">
-      <label class=\"form-check-label\" for=\"gridCheck\">
-        Check me out
-      </label>
-    </div>
-  </div>
-  <div class=\"form-group\">
-    <label for=\"testselect\">Test</label>
-    <select class=\"form-control\" id=\"testselect\">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-      <option>4</option>
-      <option>5</option>
-    </select>
-  </div>
-  <button type=\"submit\" class=\"btn btn-success\">Submit</button>
-</form>
-        </div>
+
       
       
   

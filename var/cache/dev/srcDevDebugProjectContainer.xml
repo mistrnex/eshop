@@ -379,16 +379,58 @@
     <service id="App\Controller\ArticleController" class="App\Controller\ArticleController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
+    <service id="App\Controller\CategoryController" class="App\Controller\CategoryController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
+    <service id="App\Controller\KategorieknihController" class="App\Controller\KategorieknihController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
+    <service id="App\Controller\LabelController" class="App\Controller\LabelController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
     <service id="App\Controller\Lecture8Controller" class="App\Controller\Lecture8Controller" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
     <service id="App\Controller\LuckyController" class="App\Controller\LuckyController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
     </service>
+    <service id="App\Controller\ProduktController" class="App\Controller\ProduktController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
+    <service id="App\Controller\StatusController" class="App\Controller\StatusController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+    </service>
     <service id="App\Form\ArticleType" class="App\Form\ArticleType" public="false" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
-    <service id="App\Repository\UserRepository" class="App\Repository\UserRepository" public="false" autowire="true" autoconfigure="true">
+    <service id="App\Form\CategoryType" class="App\Form\CategoryType" public="false" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\KategorieknihType" class="App\Form\KategorieknihType" public="false" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\LabelType" class="App\Form\LabelType" public="false" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\ProduktType" class="App\Form\ProduktType" public="false" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\StatusType" class="App\Form\StatusType" public="false" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Repository\KategorieknihRepository" class="App\Repository\KategorieknihRepository" public="false" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\LabelRepository" class="App\Repository\LabelRepository" public="false" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\ProduktRepository" class="App\Repository\ProduktRepository" public="false" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\StatusRepository" class="App\Repository\StatusRepository" public="false" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -408,7 +450,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-50"/>
-      <argument type="service" id="service_locator.Uv7aYj3"/>
+      <argument type="service" id="service_locator.rBVJ32R"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-100"/>
@@ -652,6 +694,11 @@
       </argument>
       <argument type="collection">
         <argument>App\Form\ArticleType</argument>
+        <argument>App\Form\CategoryType</argument>
+        <argument>App\Form\KategorieknihType</argument>
+        <argument>App\Form\LabelType</argument>
+        <argument>App\Form\ProduktType</argument>
+        <argument>App\Form\StatusType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
         <argument>Symfony\Bridge\Doctrine\Form\Type\EntityType</argument>
@@ -857,7 +904,7 @@
       <argument type="service" id="form.resolved_type_factory"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id="service_locator.hiAlxK0"/>
+      <argument type="service" id="service_locator.n1262_b"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.http_foundation"/>
@@ -3468,7 +3515,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id="service_locator.dl7F7.K"/>
+      <argument type="service" id="service_locator..WKaszC"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -4038,12 +4085,38 @@
     </service>
     <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.App\Controller\ArticleController" class="App\Controller\ArticleController" public="false" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.App\Controller\ArticleController" class="App\Controller\ArticleController" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.App\Controller\CategoryController" class="App\Controller\CategoryController" public="false" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.App\Controller\CategoryController" class="App\Controller\CategoryController" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.App\Controller\KategorieknihController" class="App\Controller\KategorieknihController" public="false" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.App\Controller\KategorieknihController" class="App\Controller\KategorieknihController" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.App\Controller\LabelController" class="App\Controller\LabelController" public="false" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.App\Controller\LabelController" class="App\Controller\LabelController" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.App\Controller\Lecture8Controller" class="App\Controller\Lecture8Controller" public="false" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.App\Controller\Lecture8Controller" class="App\Controller\Lecture8Controller" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.App\Controller\ProduktController" class="App\Controller\ProduktController" public="false" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.App\Controller\ProduktController" class="App\Controller\ProduktController" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="instanceof.Symfony\Bundle\FrameworkBundle\Controller\Controller.0.App\Controller\StatusController" class="App\Controller\StatusController" public="false" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.App\Controller\StatusController" class="App\Controller\StatusController" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ArticleType" class="App\Form\ArticleType" public="false" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.App\Form\ArticleType" class="App\Form\ArticleType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id="instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserRepository" class="App\Repository\UserRepository" public="false" autowire="true" abstract="true"/>
-    <service id="abstract.instanceof.App\Repository\UserRepository" class="App\Repository\UserRepository" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CategoryType" class="App\Form\CategoryType" public="false" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.App\Form\CategoryType" class="App\Form\CategoryType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\KategorieknihType" class="App\Form\KategorieknihType" public="false" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.App\Form\KategorieknihType" class="App\Form\KategorieknihType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\LabelType" class="App\Form\LabelType" public="false" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.App\Form\LabelType" class="App\Form\LabelType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ProduktType" class="App\Form\ProduktType" public="false" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.App\Form\ProduktType" class="App\Form\ProduktType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\StatusType" class="App\Form\StatusType" public="false" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.App\Form\StatusType" class="App\Form\StatusType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\KategorieknihRepository" class="App\Repository\KategorieknihRepository" public="false" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.App\Repository\KategorieknihRepository" class="App\Repository\KategorieknihRepository" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\LabelRepository" class="App\Repository\LabelRepository" public="false" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.App\Repository\LabelRepository" class="App\Repository\LabelRepository" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ProduktRepository" class="App\Repository\ProduktRepository" public="false" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.App\Repository\ProduktRepository" class="App\Repository\ProduktRepository" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\StatusRepository" class="App\Repository\StatusRepository" public="false" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.App\Repository\StatusRepository" class="App\Repository\StatusRepository" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="maker.auto_command.make_auth" class="Symfony\Bundle\MakerBundle\Command\MakerCommand">
       <tag name="console.command" command="make:auth"/>
       <argument type="service" id="maker.maker.make_authenticator"/>
@@ -4168,9 +4241,62 @@
       <tag name="container.service_locator"/>
       <argument type="collection"/>
     </service>
-    <service id="service_locator.Uv7aYj3" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.1.xS0od" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection"/>
+    </service>
+    <service id="service_locator._BP3tK1" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="kategorieknihRepository" type="service" id="App\Repository\KategorieknihRepository" on-invalid="ignore"/>
+      </argument>
+    </service>
+    <service id="service_locator.ygzXtv1" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection"/>
+    </service>
+    <service id="service_locator.Yp_kN0u" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="labelRepository" type="service" id="App\Repository\LabelRepository" on-invalid="ignore"/>
+      </argument>
+    </service>
+    <service id="service_locator.IxZRz4X" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection"/>
+    </service>
+    <service id="service_locator.5_1jcCd" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="produktRepository" type="service" id="App\Repository\ProduktRepository" on-invalid="ignore"/>
+      </argument>
+    </service>
+    <service id="service_locator.bvtQARV" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection"/>
+    </service>
+    <service id="service_locator.VMn7oxj" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="statusRepository" type="service" id="App\Repository\StatusRepository" on-invalid="ignore"/>
+      </argument>
+    </service>
+    <service id="service_locator.IDr9cDX" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection"/>
+    </service>
+    <service id="service_locator.rBVJ32R" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="App\Controller\KategorieknihController:index" type="service" id="service_locator._BP3tK1"/>
+        <argument key="App\Controller\LabelController:index" type="service" id="service_locator.Yp_kN0u"/>
+        <argument key="App\Controller\ProduktController:index" type="service" id="service_locator.5_1jcCd"/>
+        <argument key="App\Controller\StatusController:index" type="service" id="service_locator.VMn7oxj"/>
+        <argument key="App\Controller\KategorieknihController::index" type="service" id="service_locator._BP3tK1"/>
+        <argument key="App\Controller\LabelController::index" type="service" id="service_locator.Yp_kN0u"/>
+        <argument key="App\Controller\ProduktController::index" type="service" id="service_locator.5_1jcCd"/>
+        <argument key="App\Controller\StatusController::index" type="service" id="service_locator.VMn7oxj"/>
+      </argument>
     </service>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <argument type="service" id="service_locator.Hzvpkbd"/>
@@ -4332,19 +4458,27 @@
         <argument key="inline" type="service" id="fragment.renderer.inline"/>
       </argument>
     </service>
-    <service id="service_locator.hiAlxK0" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.n1262_b" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\ArticleType" type="service" id="App\Form\ArticleType"/>
+        <argument key="App\Form\CategoryType" type="service" id="App\Form\CategoryType"/>
+        <argument key="App\Form\KategorieknihType" type="service" id="App\Form\KategorieknihType"/>
+        <argument key="App\Form\LabelType" type="service" id="App\Form\LabelType"/>
+        <argument key="App\Form\ProduktType" type="service" id="App\Form\ProduktType"/>
+        <argument key="App\Form\StatusType" type="service" id="App\Form\StatusType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service" id="form.type.entity"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType" type="service" id="form.type.choice"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="service" id="form.type.form"/>
       </argument>
     </service>
-    <service id="service_locator.dl7F7.K" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator..WKaszC" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="App\Repository\UserRepository" type="service" id="App\Repository\UserRepository"/>
+        <argument key="App\Repository\KategorieknihRepository" type="service" id="App\Repository\KategorieknihRepository"/>
+        <argument key="App\Repository\LabelRepository" type="service" id="App\Repository\LabelRepository"/>
+        <argument key="App\Repository\ProduktRepository" type="service" id="App\Repository\ProduktRepository"/>
+        <argument key="App\Repository\StatusRepository" type="service" id="App\Repository\StatusRepository"/>
       </argument>
     </service>
     <service id="monolog.logger.request" class="Symfony\Bridge\Monolog\Logger">

@@ -1,0 +1,5 @@
+<form method="post" action="{{ path('kategorieknih_delete', {'id': kategorieknih.id}) }}" onsubmit="return confirm('Opravdu chcete smazat položku?');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ kategorieknih.id) }}">
+    <button class="btn">Vymazat</button>
+</form>

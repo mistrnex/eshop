@@ -9,3 +9,16 @@
 
     <a href="{{ path('article_index') }}">back to list</a>
 {% endblock %}
+
+{% block javascript %}
+
+$(document).ready(function() {
+    $('#article_category').select2();
+});
+
+$(document).ready(function() {
+    $('#article_labels').select2();
+});
+
+
+{% endblock %}

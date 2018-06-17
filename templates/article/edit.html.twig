@@ -11,3 +11,11 @@
 
     {{ include('article/_delete_form.html.twig') }}
 {% endblock %}
+
+{% block javascript %}
+
+$(document).ready(function() {
+    $('#article_category').select2();
+});
+
+{% endblock %}

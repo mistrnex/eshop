@@ -14,12 +14,13 @@
 
     <!-- Custom styles for this template -->
     <link href="{{asset('jumbotron.css')}}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
   </head>
 
   <body>
 
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="#">Upravené menu</a>
+      <a class="navbar-brand" href="#">Upravené menus</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -27,7 +28,7 @@
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="{{ path('homepage') }}">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{{ path('homepage') }}">Homes <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="{% if app.request.attributes.get('_route') == '_list' %}active{% endif %}" href="{{ path('about') }}">About</a>
@@ -51,7 +52,7 @@
     </main>
 
     <footer class="container">
-      <p>&copy; Company 2017-2018</p>
+      <p>&copy; AR 2018</p>
     </footer>
 
     <!-- Bootstrap core JavaScript
@@ -61,5 +62,8 @@
     <script>window.jQuery || document.write('<script src="js/jquery-slim.min.js"><\/script>')</script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>  {% block javascript %} {% endblock %} </script>
   </body>
 </html>

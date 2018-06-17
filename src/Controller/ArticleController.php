@@ -97,4 +97,27 @@ class ArticleController extends Controller
 
         return $this->redirectToRoute('article_index');
     }
+  
+       /**
+     * @Route("/ajax/test", name="article_ajax", methods="GET")
+     */
+  public function ajax(): Response
+  {
+    return $this->json(array('message' => 'Hello world')); 
+    
+  }
+  
+      /**
+     * @Route("/action/{categoryId}", name="categoryAction")
+     */
+  
+public function categoryAction($categoryId)
+{
+    $articles = $this->getDoctrine()
+            ->getRepository(Article::class)->findBy(['category' => $categoryId]);
+
+    return $this->render('article/index.html.twig', array(
+        'articles' => $articles,
+    ));
+}
 }

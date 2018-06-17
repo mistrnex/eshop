@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produkt{% endblock %}
+
+{% block body %}
+    <h1>Produkt</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ produkt.id }}</td>
+            </tr>
+            <tr>
+                <th>Název knihy</th>
+                <td>{{ produkt.name }}</td>
+            </tr>
+            <tr>
+                <th>Popis knihy</th>
+                <td>{{ produkt.description }}</td>
+            </tr>
+            <tr>
+                <th>Cena</th>
+                <td>{{ produkt.cena }}</td>
+            </tr>
+            <tr>
+                <th>Akční cena</th>
+                <td>{{ produkt.akcnicena }}</td>
+            </tr>
+            <tr>
+                <th>Množství</th>
+                <td>{{ produkt.mnozstvi }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('produkt_index') }}">Zpátky na seznam</a>
+
+    <a href="{{ path('produkt_edit', {'id': produkt.id}) }}">Upravit</a>
+
+    {{ include('produkt/_delete_form.html.twig') }}
+{% endblock %}
